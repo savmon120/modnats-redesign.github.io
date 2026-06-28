@@ -1,1 +1,1140 @@
 # modnats-redesign.github.io
+# modnats-redesign.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modified Nationals 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --mn-red: #E8231A;
+      --mn-red-dark: #C01A13;
+      --mn-orange: #F57C00;
+      --mn-white: #F0F0F0;
+      --mn-grey: #9A9A9A;
+      --mn-carbon: #242424;
+      --mn-asphalt: #1A1A1A;
+      --mn-tarmac: #0D0D0D;
+
+      --bg: var(--mn-tarmac);
+      --text: var(--mn-white);
+      --card-bg: var(--mn-carbon);
+      --header-bg: rgba(13,13,13,0.95);
+    }
+
+    [data-theme="light"] {
+      --bg: #ffffff;
+      --text: #111111;
+      --card-bg: #f5f5f5;
+      --header-bg: rgba(255,255,255,0.9);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      min-height: auto;
+      padding-bottom: 4rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* HEADER */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--header-bg);
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      letter-spacing: 0.08em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 1rem;
+      flex: 1;
+      font-size: 0.9rem;
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--mn-grey);
+      background: transparent;
+      color: var(--text);
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.8rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--mn-red);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--mn-red-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      color: var(--mn-red);
+      border-color: var(--mn-red);
+    }
+
+    /* HERO WITH VIDEO */
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      padding-bottom: 6rem;
+      overflow: hidden;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(0.45);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: "Barlow Condensed", sans-serif;
+      font-weight: 800;
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-countdown {
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: var(--mn-orange);
+    }
+
+    /* FLOATING QUICK ACTION BAR */
+    .quickbar-wrapper {
+      position: relative;
+      margin-top: -40px;
+      z-index: 20;
+    }
+
+    .quickbar {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: rgba(20,20,20,0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 1rem 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+
+    [data-theme="light"] .quickbar {
+      background: rgba(255,255,255,0.9);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .quickbar a {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .quickbar a:hover {
+      background: var(--mn-red);
+      color: #fff;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 3rem 1.5rem;
+      background: var(--mn-asphalt);
+    }
+
+    .section-alt {
+      background: var(--mn-tarmac);
+    }
+
+    [data-theme="light"] .section {
+      background: #f5f5f5;
+    }
+
+    [data-theme="light"] .section-alt {
+      background: #ffffff;
+    }
+
+    .section h2 {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .grid-quick {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .grid-attractions {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .grid-gallery {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+/* Ticket grid */
+.mn-ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Ticket card */
+.mn-ticket {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+[data-theme="light"] .mn-ticket {
+  border-color: rgba(0,0,0,0.1);
+}
+
+/* Header row */
+.mn-ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mn-ticket-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.mn-ticket-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--mn-orange);
+}
+
+/* Description */
+.mn-ticket p {
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* Hover effect */
+.mn-ticket:hover {
+  border-color: var(--mn-red);
+}
+
+
+/* Reduce the gap between image and text */
+
+/* TWO COLUMN LAYOUT */
+.grid-two {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+
+/* Internal spacing for the text column */
+.about-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;        /* consistent vertical rhythm */
+  padding-left: 5rem; /* space between image and text */
+}
+
+/* Normalize heading spacing */
+.about-copy h2,
+.about-copy h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+/* Normalize paragraph spacing */
+.about-copy p {
+  margin: 0 0 0.75rem 0;
+}
+
+/* ABOUT IMAGE */
+.about-image {
+  background:
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)),
+    url('https://static.wixstatic.com/media/cc1be5_637be8fdc1ed421b9203cda1d7562cd2~mv2.jpeg/v1/crop/x_0,y_113,w_721,h_354/fill/w_614,h_365,al_c,lg_1,q_80,enc_avif,quality_auto/Green-car-inside-768x512.jpeg')
+    center/cover no-repeat;
+  border-radius: 12px;
+  min-height: 420px;
+  aspect-ratio: 16 / 9;
+}
+
+
+
+    /* CARDS */
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 1.5rem;
+      font-weight: 500;
+    }
+
+    .card-photo {
+      background:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)),
+        url('https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80')
+        center/cover no-repeat;
+      min-height: 180px;
+      color: var(--mn-white);
+    }
+
+    /* MAP */
+    .map-preview {
+      background:
+        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)),
+        url('https://images.unsplash.com/photo-1526779259212-939e64788e3c?auto=format&fit=crop&w=1200&q=80')
+        center/cover no-repeat;
+      border-radius: 12px;
+      min-height: 260px;
+      margin-bottom: 1rem;
+    }
+
+.mn-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.mn-gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #000;
+}
+
+
+    /* SPONSORS */
+    .sponsor-logo {
+      background:
+        url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Red_Bull_logo.svg/512px-Red_Bull_logo.svg.png')
+        center/contain no-repeat;
+      background-color: #fff;
+      border-radius: 6px;
+      min-height: 60px;
+    }
+
+    /* FAQ */
+/* Flowbite-style accordion */
+.mn-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mn-accordion-item {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+[data-theme="light"] .mn-accordion-item {
+  border-color: rgba(0,0,0,0.1);
+}
+
+.mn-accordion-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mn-accordion-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Chevron icon */
+.mn-accordion-item summary::after {
+  content: "▸";
+  font-size: 1rem;
+  transition: transform 0.2s;
+  opacity: 0.7;
+}
+
+.mn-accordion-item[open] summary::after {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+.mn-accordion-item p {
+  margin: 0.75rem 0 0 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+  .faq-more {
+    margin-top: 1.5rem;
+  }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+.split-showcase { display:grid; grid-template-columns: 1fr 1fr; gap:2rem; align-items:start; }
+.showcase-media { border-radius:12px; overflow:hidden; min-height:360px; display:flex; align-items:center; justify-content:center; background:#000; }
+.showcase-img { width:100%; height:100%; object-fit:cover; display:block; transition:opacity .35s ease; }
+
+/* content */
+.showcase-content h2 { margin-top:0; }
+.showcase-intro { max-width:680px; opacity:0.92; line-height:1.6; margin-bottom:1rem; }
+
+/* tabs */
+.showcase-tabs { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem; }
+.showcase-tabs .tab { background:transparent; border:1px solid rgba(255,255,255,0.06); padding:0.5rem 0.9rem; border-radius:8px; cursor:pointer; font-weight:600; }
+.showcase-tabs .tab[aria-selected="true"] { background:linear-gradient(90deg,var(--mn-red),var(--mn-orange)); color:#fff; border-color:transparent; }
+
+/* panels */
+.panel { padding:0.25rem 0; }
+.facts { list-style:none; padding:0; margin:0.75rem 0 0 0; display:flex; gap:1rem; flex-wrap:wrap; }
+.facts li strong { display:inline-block; width:90px; color:var(--mn-orange); font-weight:700; }
+
+/* actions */
+.actions { margin-top:0.75rem; display:flex; gap:0.75rem; }
+
+/* responsive */
+@media (max-width: 900px) {
+  .split-showcase { grid-template-columns: 1fr; }
+  .showcase-media { order:-1; min-height:240px; }
+}
+
+
+
+
+    /* FOOTER */
+    .footer {
+      background: #000;
+      padding: 2.5rem 1.5rem;
+      color: var(--mn-white);
+    }
+
+    [data-theme="light"] .footer {
+      background: #111;
+      color: #f5f5f5;
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .footer h4 {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer a {
+      color: var(--mn-grey);
+      font-size: 0.9rem;
+    }
+    /* Club Stands — editorial, not cardy */
+.club-header .lead { max-width: 720px; opacity: 0.92; line-height: 1.6; margin-bottom: 0.5rem; }
+.club-keyline { display:flex; gap:0.5rem; margin-top:0.5rem; align-items:center; flex-wrap:wrap; }
+.badge { background: linear-gradient(90deg,var(--mn-red),var(--mn-orange)); color:#fff; padding:0.35rem 0.6rem; border-radius:999px; font-weight:700; font-size:0.9rem; }
+.badge.muted { background: transparent; color:var(--mn-white); border:1px solid rgba(255,255,255,0.06); font-weight:600; }
+
+/* Grid */
+.club-grid { display:grid; grid-template-columns: 1fr 320px; gap:1.5rem; align-items:start; margin-top:1.25rem; }
+@media (max-width:900px){ .club-grid { grid-template-columns: 1fr; } }
+
+/* Steps */
+.steps { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1rem; }
+.steps li { display:flex; gap:1rem; align-items:flex-start; }
+.steps li strong { display:inline-block; min-width:72px; background:var(--card-bg); color:var(--text); padding:0.45rem 0.6rem; border-radius:8px; font-weight:700; text-align:center; }
+.step-copy { opacity:0.95; line-height:1.45; }
+
+/* Actions */
+.club-actions { margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap; }
+
+/* Facts aside */
+.club-facts { background: linear-gradient(rgba(0,0,0,0.02), rgba(0,0,0,0.02)); border-radius:12px; padding:1rem; border:1px solid rgba(255,255,255,0.04); }
+.club-facts h3 { margin:0 0 0.5rem 0; }
+.facts-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.6rem; }
+.facts-list li strong { display:inline-block; width:90px; color:var(--mn-orange); font-weight:700; }
+
+/* Support */
+.club-support { margin-top:1rem; font-size:0.95rem; opacity:0.95; }
+
+/* FAQ */
+.club-faq { margin-top:1.25rem; background:var(--card-bg); padding:1rem; border-radius:10px; border:1px solid rgba(255,255,255,0.04); }
+.allocation-note {
+  margin-top:0.75rem;
+  background: rgba(255,255,255,0.02);
+  padding:0.6rem 0.9rem;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.04);
+  max-width:820px;
+  line-height:1.45;
+  font-weight:600;
+}
+[data-theme="light"] .allocation-note { border-color: rgba(0,0,0,0.06); }
+
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-inner {
+        text-align: center;
+        padding: 4rem 1.5rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .grid-two {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .quickbar {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">MODIFIED NATIONALS</div>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#tickets-page">Tickets</a>
+      <a href="#show-cars-page">Show Cars</a>
+      <a href="#clubs-page">Clubs</a>
+      <a href="#camping-page">Camping</a>
+      <a href="#trade-page">Trade</a>
+      <a href="#gallery-page">Gallery</a>
+      <a href="#faq-page">FAQ</a>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle">Light / Dark</button>
+    <a href="#tickets-page" class="btn btn-primary">Buy Tickets</a>
+  </div>
+</header>
+
+<!-- HOME -->
+<div id="home" class="page">
+
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="C:\Users\kings\Downloads\file.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-inner">
+      <h1 class="hero-title">MODIFIED NATIONALS 2025</h1>
+      <p class="hero-subtitle">23–25 May · Lincolnshire Showground</p>
+
+      <div class="hero-buttons">
+        <a href="#tickets-page" class="btn btn-primary">Buy Tickets</a>
+        <a href="#show-cars-page" class="btn btn-secondary">Enter Your Car</a>
+      </div>
+
+      <p class="hero-countdown">Event starts in 42 days</p>
+    </div>
+  </section>
+
+  <div class="quickbar-wrapper">
+    <div class="quickbar">
+      <a href="#tickets-page">Tickets</a>
+      <a href="#show-cars-page">Show Cars</a>
+      <a href="#clubs-page">Clubs</a>
+      <a href="#camping-page">Camping</a>
+    </div>
+  </div>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="container grid grid-two">
+
+    <div class="about-image"></div>
+
+    <div class="about-copy">
+      <h2>About Modified Nationals</h2>
+
+      <p><strong>The UK’s biggest celebration of modified culture, performance builds, and automotive creativity.</strong></p>
+
+      <p>Modified Nationals brings together thousands of enthusiasts for a full‑throttle weekend of cars, community, and culture. From high‑powered track weapons to meticulously detailed show cars, this is where the scene comes alive.</p>
+
+      <h3>Built for the Scene</h3>
+      <p>Every corner of the event is shaped by passion — the builders, the clubs, the traders, the photographers, and the fans who make this community what it is. Whether you’re showcasing your pride and joy or exploring the latest trends, you’ll find your place here.</p>
+
+      <h3>Be Part of the Action</h3>
+      <p>Immerse yourself in the atmosphere, connect with fellow enthusiasts, and experience a weekend that celebrates the culture behind the cars. Modified Nationals isn’t just an event — it’s a movement.</p>
+
+      <a href="#whats-on-page" class="btn btn-secondary" style="margin-top:1rem;">Explore What’s On</a>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- PLAN -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Plan Your Weekend</h2>
+
+      <div class="grid grid-quick">
+        <a href="#visitor-page" class="card">I’m Visiting</a>
+        <a href="#show-cars-page" class="card">I’m Showing My Car</a>
+        <a href="#clubs-page" class="card">I’m Part of a Club</a>
+        <a href="#trade-page" class="card">I’m Trading</a>
+        <a href="#camping-page" class="card">I’m Camping</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATTRACTIONS -->
+  <section id="whats-on-page" class="section">
+    <div class="container">
+      <h2>Featured Attractions</h2>
+
+      <div class="grid grid-attractions">
+        <div class="card card-photo">Live Action Arena</div>
+        <div class="card card-photo">Ultimate Show Car</div>
+        <div class="card card-photo">Drift Displays</div>
+        <div class="card card-photo">Club Displays</div>
+        <div class="card card-photo">Trade Village</div>
+        <div class="card card-photo">Food and Drink</div>
+        <div class="card card-photo">Entertainment</div>
+        <div class="card card-photo">Family Activities</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Event Schedule</h2>
+
+      <details open>
+        <summary>Friday</summary>
+        <ul>
+          <li>14:00 — Gates Open</li>
+          <li>17:00 — Camping Opens</li>
+          <li>20:00 — Evening Entertainment</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Saturday</summary>
+        <ul>
+          <li>10:00 — Live Arena</li>
+          <li>12:00 — Drift Displays</li>
+          <li>18:00 — Main Stage</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Sunday</summary>
+        <ul>
+          <li>10:00 — Show and Shine</li>
+          <li>14:00 — Awards</li>
+          <li>17:00 — Event Close</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section id="map-page" class="section">
+    <div class="container">
+      <h2>Explore the Venue</h2>
+      <div class="map-preview"></div>
+      <a href="#map-page" class="btn btn-secondary">View Full Site Map</a>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Latest News</h2>
+
+      <div class="grid grid-quick">
+        <div class="card">
+          <h3>Show Car Applications Open</h3>
+          <p>15 March 2025</p>
+        </div>
+
+        <div class="card">
+          <h3>New Live Action Arena Announced</h3>
+          <p>10 March 2025</p>
+        </div>
+
+        <div class="card">
+          <h3>Earlybird Tickets Now Available</h3>
+          <p>1 March 2025</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery-page" class="section section-alt">
+  <div class="container">
+    <h2>Gallery</h2>
+
+    <div class="mn-gallery">
+      <img src="https://static.wixstatic.com/media/cc1be5_a2de4a50f2ea47d4bf63ed3c0919b49b~mv2.jpg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_a2de4a50f2ea47d4bf63ed3c0919b49b~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_f2f2f16eb6b44a4baf1ffe07bcdad2b6~mv2.jpg/v1/fill/w_209,h_314,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_f2f2f16eb6b44a4baf1ffe07bcdad2b6~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_0dd0bdb9dcf740beb553aa9ea4496510~mv2.jpg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_0dd0bdb9dcf740beb553aa9ea4496510~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_44cfdeb413854e2c8bcb2941f45d88b0~mv2.jpg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_44cfdeb413854e2c8bcb2941f45d88b0~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_24fb9dbd767a436a98b66fca21b60e70~mv2.jpg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_24fb9dbd767a436a98b66fca21b60e70~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_659bb748eaa34a8fae11270b8ff7b43f~mv2.jpg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_659bb748eaa34a8fae11270b8ff7b43f~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_cd01643d8f414776838f186fad45bc42~mv2.jpg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_cd01643d8f414776838f186fad45bc42~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_99cc1673a51c4c848a8ac0fa1d4a54ac~mv2.jpg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_99cc1673a51c4c848a8ac0fa1d4a54ac~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_4067eecd25364b0e87f2bc0e3df72bf8~mv2.jpg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_4067eecd25364b0e87f2bc0e3df72bf8~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_7e0fce20b2614ffda5eb835e1566ef11~mv2.jpg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_7e0fce20b2614ffda5eb835e1566ef11~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_637be8fdc1ed421b9203cda1d7562cd2~mv2.jpeg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_637be8fdc1ed421b9203cda1d7562cd2~mv2.jpeg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_b59fd8763df14a50822b77a43992eb51~mv2.webp/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_b59fd8763df14a50822b77a43992eb51~mv2.webp" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_39dead8742574abb9a464f2447d6ef52~mv2.png/v1/fill/w_314,h_314,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_39dead8742574abb9a464f2447d6ef52~mv2.png" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_0594e43fd65a419a88449bcbfad44658~mv2.jpg/v1/fill/w_506,h_282,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_0594e43fd65a419a88449bcbfad44658~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_1df2c5c70c2649d99c886b9fcc80f3b8~mv2.jpg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_1df2c5c70c2649d99c886b9fcc80f3b8~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_bf62a9c2b1144628bf58e98c73c40528~mv2.jpg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_bf62a9c2b1144628bf58e98c73c40528~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_e1a07249c1184bdaa37ca43e507b486b~mv2.jpg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_e1a07249c1184bdaa37ca43e507b486b~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_c28efec3f1114e5aa60ba09875cb8348~mv2.jpg/v1/fill/w_236,h_314,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_c28efec3f1114e5aa60ba09875cb8348~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_aae73222de5b4f708a2e8f9cda84ce01~mv2.jpg/v1/fill/w_209,h_314,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_aae73222de5b4f708a2e8f9cda84ce01~mv2.jpg" alt="">
+      <img src="https://static.wixstatic.com/media/cc1be5_3f66dbd745ad4679a752a39c6225f924~mv2.jpg/v1/fill/w_506,h_284,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_3f66dbd745ad4679a752a39c6225f924~mv2.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+
+  <!-- FAQ -->
+ <section id="faq-page" class="section">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="mn-accordion">
+
+      <details class="mn-accordion-item">
+        <summary>Can I camp at the event?</summary>
+        <p>Yes — weekend camping is available with pre-booked tickets.</p>
+      </details>
+
+      <details class="mn-accordion-item">
+        <summary>How do I enter my car?</summary>
+        <p>Use the Show Car Application Form on the Show Cars page.</p>
+      </details>
+
+      <details class="mn-accordion-item">
+        <summary>Are dogs allowed?</summary>
+        <p>Yes, but they must be kept on a lead at all times.</p>
+      </details>
+
+    </div>
+
+    <div class="faq-more">
+      <a href="#faq-page" class="btn btn-secondary">View More FAQs</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- TICKETS -->
+<section id="tickets-page" class="section section-alt">
+  <div class="container">
+    <h2>Tickets</h2>
+
+    <p>
+      Children 12 & Under enter <strong>free</strong> — no ticket required.<br>
+      Reserved Camping is available for both Queue Jump and Weekend Ticket holders.
+    </p>
+
+    <div class="mn-ticket-grid">
+
+      <!-- Queue Jump Weekend Ticket -->
+      <div class="mn-ticket">
+        <h3>Queue Jump Weekend Ticket</h3>
+        <p class="mn-ticket-desc">
+          Enjoy exclusive access from 10am Friday. Includes event programme, club stand access if required,
+          general camping access, both show days and evening entertainment Friday & Saturday night.
+        </p>
+
+        <div class="mn-ticket-prices">
+          <div><strong>Adult:</strong> £70</div>
+          <div><strong>Teen (12–16):</strong> £35</div>
+          <div><strong>Reserved Camping:</strong> From £35</div>
+        </div>
+
+        <a href="#tickets-page" class="btn btn-primary">Get Tickets</a>
+      </div>
+
+      <!-- Weekend Ticket -->
+      <div class="mn-ticket">
+        <h3>Weekend Ticket</h3>
+        <p class="mn-ticket-desc">
+          Access from 2pm Friday. Includes event programme, club stand access if required,
+          general camping access, both show days and evening entertainment Friday & Saturday night.
+        </p>
+
+        <div class="mn-ticket-prices">
+          <div><strong>Adult:</strong> £65</div>
+          <div><strong>Teen (12–16):</strong> £35</div>
+          <div><strong>Reserved Camping:</strong> From £35</div>
+        </div>
+
+        <a href="#tickets-page" class="btn btn-primary">Get Tickets</a>
+      </div>
+
+      <!-- Single Day Ticket -->
+      <div class="mn-ticket">
+        <h3>Single Day Ticket</h3>
+        <p class="mn-ticket-desc">
+          Early entry from 10:00am on Saturday or Sunday until 4:30pm when purchased in advance.
+          Includes club stand access if required. No camping or evening entertainment.
+          Weekend ticket required after 5pm.
+        </p>
+
+        <div class="mn-ticket-prices">
+          <div><strong>Adult:</strong> £20</div>
+          <div><strong>Teen (13–16):</strong> £10</div>
+          <div><strong>Children 12 & Under:</strong> Free</div>
+        </div>
+
+        <a href="#tickets-page" class="btn btn-primary">Get Tickets</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- SHOW CARS -->
+<section id="showcase" class="section">
+  <div class="container split-showcase">
+
+    <div class="showcase-media" aria-hidden="true">
+      <img src="https://static.wixstatic.com/media/cc1be5_39dead8742574abb9a464f2447d6ef52~mv2.png/v1/fill/w_314,h_314,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_39dead8742574abb9a464f2447d6ef52~mv2.png" alt="" class="showcase-img" />
+    </div>
+
+    <div class="showcase-content">
+      <h2>Showcase Your Car</h2>
+
+      <p class="showcase-intro">
+        There are numerous ways you can apply to showcase your car at the event. Once your application is in, you are guaranteed a reserved spot — this may be a drive‑in position or an indoor display depending on selection.
+      </p>
+
+      <div class="showcase-tabs" role="tablist" aria-label="Showcase options">
+        <button class="tab" role="tab" aria-selected="true" data-key="ultimate">Ultimate Show Car</button>
+        <button class="tab" role="tab" aria-selected="false" data-key="plaza">Greenlight Show Plaza</button>
+        <button class="tab" role="tab" aria-selected="false" data-key="paddock">Eurostance Paddock</button>
+        <button class="tab" role="tab" aria-selected="false" data-key="drivein">Drive‑in Show Car</button>
+      </div>
+
+      <div class="showcase-panel-wrap">
+        <article class="panel" data-key="ultimate" role="tabpanel">
+          <h3>Ultimate Show Car <span class="sponsor">Mile Deep</span></h3>
+          <p>If selected, your vehicle will be showcased inside one of our exhibition halls. Weekend ticket required.</p>
+          <ul class="facts">
+            <li><strong>Ticket</strong> Weekend ticket required</li>
+            <li><strong>Application</strong> Application required</li>
+            <li><strong>Camping</strong> Allowed</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" href="#show-cars-page">Show Car Application</a>
+            <a class="btn btn-secondary" href="#tickets-page">Buy Tickets</a>
+          </div>
+        </article>
+
+        <article class="panel" data-key="plaza" role="tabpanel" hidden>
+          <h3>Greenlight Show Plaza <span class="sponsor">Greenlight Insurance</span></h3>
+          <p>Displayed outside the main Exhibition Hall. Weekend attendance required.</p>
+          <ul class="facts">
+            <li><strong>Ticket</strong> Weekend ticket required</li>
+            <li><strong>Application</strong> Application required</li>
+            <li><strong>Camping</strong> Allowed</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" href="#show-cars-page">Show Car Application</a>
+            <a class="btn btn-secondary" href="#tickets-page">Buy Tickets</a>
+          </div>
+        </article>
+
+        <article class="panel" data-key="paddock" role="tabpanel" hidden>
+          <h3>Eurostance Paddock <span class="sponsor">Eurostance Magazine</span></h3>
+          <p>Located in the central paddock area — ideal for stance and show builds.</p>
+          <ul class="facts">
+            <li><strong>Ticket</strong> Weekend ticket required</li>
+            <li><strong>Application</strong> Application required</li>
+            <li><strong>Camping</strong> Allowed</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-primary" href="#show-cars-page">Show Car Application</a>
+            <a class="btn btn-secondary" href="#tickets-page">Buy Tickets</a>
+          </div>
+        </article>
+
+        <article class="panel" data-key="drivein" role="tabpanel" hidden>
+          <h3>Drive‑in Show Car</h3>
+          <p>No application required. Dedicated area for unique builds not entering judged categories.</p>
+          <ul class="facts">
+            <li><strong>Ticket</strong> Day or weekend ticket</li>
+            <li><strong>Application</strong> Not required</li>
+            <li><strong>Camping</strong> Depends on ticket</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-secondary" href="#tickets-page">Buy Tickets</a>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CLUBS -->
+<header class="club-header">
+  <h2>Club Stands</h2>
+  <p class="lead">
+    Reserve a dedicated club stand at Modified Nationals and showcase your cars to thousands of visitors.
+  </p>
+
+  <div class="club-keyline">
+    <span class="badge">Closing date: <strong>15 June</strong></span>
+    <span class="badge muted">First 20 clubs choose location</span>
+  </div>
+
+  <!-- NEW: Allocation rule inline -->
+  <p class="allocation-note">
+    <strong>How stands are allocated</strong>: stands are allocated in order of <strong>form submission + first 5 tickets purchased</strong>. The first 20 clubs to complete both steps may choose their preferred location.
+  </p>
+</header>
+
+
+
+<!-- TRADE -->
+<div id="trade-page" class="page section">
+  <div class="container">
+    <h2>Trading Opportunities at Modified Nationals</h2>
+    <a href="#tickets-page" class="btn btn-primary">Get Tickets Here</a>
+
+    <p>At Modified Nationals, we are more than just a show — we are a community.</p>
+    <p>We create an exciting, energetic space where traders become part of something special.</p>
+    <p>With thousands of passionate fans attending, this is the perfect place to grow your brand.</p>
+
+    <h3>Discover Exclusive Trader Advantages</h3>
+    <ul>
+      <li>High foot traffic exposure.</li>
+      <li>Comprehensive event support.</li>
+      <li>Networking with fellow traders.</li>
+    </ul>
+
+    <div style="margin-top:1.5rem;">
+      <a href="#trade-page" class="btn btn-secondary">Download Trade Pack</a>
+      <a href="#trade-page" class="btn btn-secondary">Trade Booking Form</a>
+    </div>
+
+    <h3>How to Join Us</h3>
+    <ul>
+      <li>Trade booking form</li>
+      <li>Terms and conditions</li>
+      <li>Risk assessment template</li>
+    </ul>
+
+    <h3>Step One: Secure your spot</h3>
+    <p>Select your stall location and register your business.</p>
+
+    <h3>Step Two: Prepare your setup</h3>
+    <p>Organise your display and inventory.</p>
+
+    <h3>Step Three: Connect and grow</h3>
+    <p>Engage with visitors and build relationships.</p>
+
+    <a href="#tickets-page" class="btn btn-primary">Get Tickets</a>
+
+    <h3>Trade Highlights</h3>
+    <p>Over 100 active traders and more than 25,000 attendees each year.</p>
+  </div>
+</div>
+
+<!-- CAMPING -->
+<div id="camping-page" class="page section section-alt">
+  <div class="container">
+    <h2>Camping</h2>
+    <p>Weekend camping options, facilities and rules.</p>
+  </div>
+</div>
+
+<!-- VISITOR -->
+<div id="visitor-page" class="page section">
+  <div class="container">
+    <h2>Visitor Information</h2>
+    <p>Everything you need to know before attending Modified Nationals.</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#tickets-page">Tickets</a></li>
+        <li><a href="#show-cars-page">Show Cars</a></li>
+        <li><a href="#camping-page">Camping</a></li>
+        <li><a href="#trade-page">Trade</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Visitor Info</h4>
+      <ul>
+        <li><a href="#visitor-page">Visitor Information</a></li>
+        <li><a href="#clubs-page">Clubs</a></li>
+        <li><a href="#map-page">Site Map</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#privacy-page">Privacy Policy</a></li>
+        <li><a href="#terms-page">Terms and Conditions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Newsletter</h4>
+      <p>Stay updated with the latest news and announcements.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+</script>
+
+</body>
+</html>
