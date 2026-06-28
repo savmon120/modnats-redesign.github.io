@@ -1,7 +1,3 @@
-# modnats-redesign.github.io
-# modnats-redesign.github.io
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Modified Nationals 2025</title>
@@ -664,22 +660,22 @@
 <section class="section">
   <div class="container grid grid-two">
 
-    <div class="about-image"></div>
+  <div class="about-image"></div>
 
-    <div class="about-copy">
+  <div class="about-copy">
       <h2>About Modified Nationals</h2>
 
-      <p><strong>The UK’s biggest celebration of modified culture, performance builds, and automotive creativity.</strong></p>
+  <p><strong>The UK’s biggest celebration of modified culture, performance builds, and automotive creativity.</strong></p>
 
-      <p>Modified Nationals brings together thousands of enthusiasts for a full‑throttle weekend of cars, community, and culture. From high‑powered track weapons to meticulously detailed show cars, this is where the scene comes alive.</p>
+   <p>Modified Nationals brings together thousands of enthusiasts for a full‑throttle weekend of cars, community, and culture. From high‑powered track weapons to meticulously detailed show cars, this is where the scene comes alive.</p>
 
-      <h3>Built for the Scene</h3>
+   <h3>Built for the Scene</h3>
       <p>Every corner of the event is shaped by passion — the builders, the clubs, the traders, the photographers, and the fans who make this community what it is. Whether you’re showcasing your pride and joy or exploring the latest trends, you’ll find your place here.</p>
 
-      <h3>Be Part of the Action</h3>
+   <h3>Be Part of the Action</h3>
       <p>Immerse yourself in the atmosphere, connect with fellow enthusiasts, and experience a weekend that celebrates the culture behind the cars. Modified Nationals isn’t just an event — it’s a movement.</p>
 
-      <a href="#whats-on-page" class="btn btn-secondary" style="margin-top:1rem;">Explore What’s On</a>
+  <a href="#whats-on-page" class="btn btn-secondary" style="margin-top:1rem;">Explore What’s On</a>
     </div>
 
   </div>
@@ -692,7 +688,7 @@
     <div class="container">
       <h2>Plan Your Weekend</h2>
 
-      <div class="grid grid-quick">
+  <div class="grid grid-quick">
         <a href="#visitor-page" class="card">I’m Visiting</a>
         <a href="#show-cars-page" class="card">I’m Showing My Car</a>
         <a href="#clubs-page" class="card">I’m Part of a Club</a>
@@ -707,7 +703,7 @@
     <div class="container">
       <h2>Featured Attractions</h2>
 
-      <div class="grid grid-attractions">
+   <div class="grid grid-attractions">
         <div class="card card-photo">Live Action Arena</div>
         <div class="card card-photo">Ultimate Show Car</div>
         <div class="card card-photo">Drift Displays</div>
@@ -725,7 +721,7 @@
     <div class="container">
       <h2>Event Schedule</h2>
 
-      <details open>
+   <details open>
         <summary>Friday</summary>
         <ul>
           <li>14:00 — Gates Open</li>
@@ -734,7 +730,7 @@
         </ul>
       </details>
 
-      <details>
+  <details>
         <summary>Saturday</summary>
         <ul>
           <li>10:00 — Live Arena</li>
@@ -743,7 +739,7 @@
         </ul>
       </details>
 
-      <details>
+  <details>
         <summary>Sunday</summary>
         <ul>
           <li>10:00 — Show and Shine</li>
@@ -768,18 +764,18 @@
     <div class="container">
       <h2>Latest News</h2>
 
-      <div class="grid grid-quick">
+   <div class="grid grid-quick">
         <div class="card">
           <h3>Show Car Applications Open</h3>
           <p>15 March 2025</p>
         </div>
 
-        <div class="card">
+   <div class="card">
           <h3>New Live Action Arena Announced</h3>
           <p>10 March 2025</p>
         </div>
 
-        <div class="card">
+   <div class="card">
           <h3>Earlybird Tickets Now Available</h3>
           <p>1 March 2025</p>
         </div>
@@ -792,7 +788,7 @@
   <div class="container">
     <h2>Gallery</h2>
 
-    <div class="mn-gallery">
+   <div class="mn-gallery">
       <img src="https://static.wixstatic.com/media/cc1be5_a2de4a50f2ea47d4bf63ed3c0919b49b~mv2.jpg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_a2de4a50f2ea47d4bf63ed3c0919b49b~mv2.jpg" alt="">
       <img src="https://static.wixstatic.com/media/cc1be5_f2f2f16eb6b44a4baf1ffe07bcdad2b6~mv2.jpg/v1/fill/w_209,h_314,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_f2f2f16eb6b44a4baf1ffe07bcdad2b6~mv2.jpg" alt="">
       <img src="https://static.wixstatic.com/media/cc1be5_0dd0bdb9dcf740beb553aa9ea4496510~mv2.jpg/v1/fill/w_506,h_337,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_0dd0bdb9dcf740beb553aa9ea4496510~mv2.jpg" alt="">
@@ -823,26 +819,26 @@
   <div class="container">
     <h2>Frequently Asked Questions</h2>
 
-    <div class="mn-accordion">
+   <div class="mn-accordion">
 
-      <details class="mn-accordion-item">
+  <details class="mn-accordion-item">
         <summary>Can I camp at the event?</summary>
         <p>Yes — weekend camping is available with pre-booked tickets.</p>
       </details>
 
-      <details class="mn-accordion-item">
+  <details class="mn-accordion-item">
         <summary>How do I enter my car?</summary>
         <p>Use the Show Car Application Form on the Show Cars page.</p>
       </details>
 
-      <details class="mn-accordion-item">
+  <details class="mn-accordion-item">
         <summary>Are dogs allowed?</summary>
         <p>Yes, but they must be kept on a lead at all times.</p>
       </details>
 
-    </div>
+  </div>
 
-    <div class="faq-more">
+  <div class="faq-more">
       <a href="#faq-page" class="btn btn-secondary">View More FAQs</a>
     </div>
   </div>
@@ -854,49 +850,49 @@
   <div class="container">
     <h2>Tickets</h2>
 
-    <p>
+  <p>
       Children 12 & Under enter <strong>free</strong> — no ticket required.<br>
       Reserved Camping is available for both Queue Jump and Weekend Ticket holders.
     </p>
 
-    <div class="mn-ticket-grid">
+  <div class="mn-ticket-grid">
 
       <!-- Queue Jump Weekend Ticket -->
-      <div class="mn-ticket">
+  <div class="mn-ticket">
         <h3>Queue Jump Weekend Ticket</h3>
         <p class="mn-ticket-desc">
           Enjoy exclusive access from 10am Friday. Includes event programme, club stand access if required,
           general camping access, both show days and evening entertainment Friday & Saturday night.
         </p>
 
-        <div class="mn-ticket-prices">
+  <div class="mn-ticket-prices">
           <div><strong>Adult:</strong> £70</div>
           <div><strong>Teen (12–16):</strong> £35</div>
           <div><strong>Reserved Camping:</strong> From £35</div>
         </div>
 
-        <a href="#tickets-page" class="btn btn-primary">Get Tickets</a>
+  <a href="#tickets-page" class="btn btn-primary">Get Tickets</a>
       </div>
 
       <!-- Weekend Ticket -->
-      <div class="mn-ticket">
+  <div class="mn-ticket">
         <h3>Weekend Ticket</h3>
         <p class="mn-ticket-desc">
           Access from 2pm Friday. Includes event programme, club stand access if required,
           general camping access, both show days and evening entertainment Friday & Saturday night.
         </p>
 
-        <div class="mn-ticket-prices">
+  <div class="mn-ticket-prices">
           <div><strong>Adult:</strong> £65</div>
           <div><strong>Teen (12–16):</strong> £35</div>
           <div><strong>Reserved Camping:</strong> From £35</div>
         </div>
 
-        <a href="#tickets-page" class="btn btn-primary">Get Tickets</a>
+  <a href="#tickets-page" class="btn btn-primary">Get Tickets</a>
       </div>
 
       <!-- Single Day Ticket -->
-      <div class="mn-ticket">
+  <div class="mn-ticket">
         <h3>Single Day Ticket</h3>
         <p class="mn-ticket-desc">
           Early entry from 10:00am on Saturday or Sunday until 4:30pm when purchased in advance.
@@ -904,16 +900,16 @@
           Weekend ticket required after 5pm.
         </p>
 
-        <div class="mn-ticket-prices">
+  <div class="mn-ticket-prices">
           <div><strong>Adult:</strong> £20</div>
           <div><strong>Teen (13–16):</strong> £10</div>
           <div><strong>Children 12 & Under:</strong> Free</div>
         </div>
 
-        <a href="#tickets-page" class="btn btn-primary">Get Tickets</a>
+  <a href="#tickets-page" class="btn btn-primary">Get Tickets</a>
       </div>
 
-    </div>
+  </div>
   </div>
 </section>
 
@@ -924,25 +920,25 @@
 <section id="showcase" class="section">
   <div class="container split-showcase">
 
-    <div class="showcase-media" aria-hidden="true">
+  <div class="showcase-media" aria-hidden="true">
       <img src="https://static.wixstatic.com/media/cc1be5_39dead8742574abb9a464f2447d6ef52~mv2.png/v1/fill/w_314,h_314,al_c,q_80,usm_0.66_1.00_0.01/cc1be5_39dead8742574abb9a464f2447d6ef52~mv2.png" alt="" class="showcase-img" />
     </div>
 
-    <div class="showcase-content">
+  <div class="showcase-content">
       <h2>Showcase Your Car</h2>
 
-      <p class="showcase-intro">
+  <p class="showcase-intro">
         There are numerous ways you can apply to showcase your car at the event. Once your application is in, you are guaranteed a reserved spot — this may be a drive‑in position or an indoor display depending on selection.
       </p>
 
-      <div class="showcase-tabs" role="tablist" aria-label="Showcase options">
+  <div class="showcase-tabs" role="tablist" aria-label="Showcase options">
         <button class="tab" role="tab" aria-selected="true" data-key="ultimate">Ultimate Show Car</button>
         <button class="tab" role="tab" aria-selected="false" data-key="plaza">Greenlight Show Plaza</button>
         <button class="tab" role="tab" aria-selected="false" data-key="paddock">Eurostance Paddock</button>
         <button class="tab" role="tab" aria-selected="false" data-key="drivein">Drive‑in Show Car</button>
       </div>
 
-      <div class="showcase-panel-wrap">
+  <div class="showcase-panel-wrap">
         <article class="panel" data-key="ultimate" role="tabpanel">
           <h3>Ultimate Show Car <span class="sponsor">Mile Deep</span></h3>
           <p>If selected, your vehicle will be showcased inside one of our exhibition halls. Weekend ticket required.</p>
@@ -957,7 +953,7 @@
           </div>
         </article>
 
-        <article class="panel" data-key="plaza" role="tabpanel" hidden>
+  <article class="panel" data-key="plaza" role="tabpanel" hidden>
           <h3>Greenlight Show Plaza <span class="sponsor">Greenlight Insurance</span></h3>
           <p>Displayed outside the main Exhibition Hall. Weekend attendance required.</p>
           <ul class="facts">
@@ -971,7 +967,7 @@
           </div>
         </article>
 
-        <article class="panel" data-key="paddock" role="tabpanel" hidden>
+  <article class="panel" data-key="paddock" role="tabpanel" hidden>
           <h3>Eurostance Paddock <span class="sponsor">Eurostance Magazine</span></h3>
           <p>Located in the central paddock area — ideal for stance and show builds.</p>
           <ul class="facts">
@@ -985,7 +981,7 @@
           </div>
         </article>
 
-        <article class="panel" data-key="drivein" role="tabpanel" hidden>
+  <article class="panel" data-key="drivein" role="tabpanel" hidden>
           <h3>Drive‑in Show Car</h3>
           <p>No application required. Dedicated area for unique builds not entering judged categories.</p>
           <ul class="facts">
@@ -999,7 +995,7 @@
         </article>
       </div>
 
-    </div>
+  </div>
   </div>
 </section>
 
@@ -1031,41 +1027,41 @@
     <h2>Trading Opportunities at Modified Nationals</h2>
     <a href="#tickets-page" class="btn btn-primary">Get Tickets Here</a>
 
-    <p>At Modified Nationals, we are more than just a show — we are a community.</p>
+  <p>At Modified Nationals, we are more than just a show — we are a community.</p>
     <p>We create an exciting, energetic space where traders become part of something special.</p>
     <p>With thousands of passionate fans attending, this is the perfect place to grow your brand.</p>
 
-    <h3>Discover Exclusive Trader Advantages</h3>
+  <h3>Discover Exclusive Trader Advantages</h3>
     <ul>
       <li>High foot traffic exposure.</li>
       <li>Comprehensive event support.</li>
       <li>Networking with fellow traders.</li>
     </ul>
 
-    <div style="margin-top:1.5rem;">
+  <div style="margin-top:1.5rem;">
       <a href="#trade-page" class="btn btn-secondary">Download Trade Pack</a>
       <a href="#trade-page" class="btn btn-secondary">Trade Booking Form</a>
     </div>
 
-    <h3>How to Join Us</h3>
+  <h3>How to Join Us</h3>
     <ul>
       <li>Trade booking form</li>
       <li>Terms and conditions</li>
       <li>Risk assessment template</li>
     </ul>
 
-    <h3>Step One: Secure your spot</h3>
+  <h3>Step One: Secure your spot</h3>
     <p>Select your stall location and register your business.</p>
 
-    <h3>Step Two: Prepare your setup</h3>
+  <h3>Step Two: Prepare your setup</h3>
     <p>Organise your display and inventory.</p>
 
-    <h3>Step Three: Connect and grow</h3>
+  <h3>Step Three: Connect and grow</h3>
     <p>Engage with visitors and build relationships.</p>
 
-    <a href="#tickets-page" class="btn btn-primary">Get Tickets</a>
+  <a href="#tickets-page" class="btn btn-primary">Get Tickets</a>
 
-    <h3>Trade Highlights</h3>
+  <h3>Trade Highlights</h3>
     <p>Over 100 active traders and more than 25,000 attendees each year.</p>
   </div>
 </div>
