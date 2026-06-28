@@ -631,19 +631,19 @@
 
   <section class="hero">
     <video class="hero-video" autoplay muted loop playsinline>
-      <source src="C:\Users\kings\Downloads\file.mp4" type="video/mp4">
+      <source src="https://video.wixstatic.com/video/cc1be5_51829d22751a4dc48f8cb5bc980258f0/360p/mp4/file.mp4" type="video/mp4">
     </video>
 
-    <div class="hero-inner">
+  <div class="hero-inner">
       <h1 class="hero-title">MODIFIED NATIONALS 2025</h1>
       <p class="hero-subtitle">23–25 May · Lincolnshire Showground</p>
 
-      <div class="hero-buttons">
+  <div class="hero-buttons">
         <a href="#tickets-page" class="btn btn-primary">Buy Tickets</a>
         <a href="#show-cars-page" class="btn btn-secondary">Enter Your Car</a>
       </div>
 
-      <p class="hero-countdown">Event starts in 42 days</p>
+  <p class="hero-countdown">Event starts in 42 days</p>
     </div>
   </section>
 
